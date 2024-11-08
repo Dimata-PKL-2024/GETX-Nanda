@@ -4,7 +4,10 @@ import 'package:bwispot/controllers/wisata_controller.dart';
 import 'package:bwispot/views/detail_page.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -47,13 +50,13 @@ void _showSortDialog() {
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: Text("Pilih Tipe Wisata"),
+        title: const Text("Pilih Tipe Wisata"),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               leading: getIconForTipe('Pantai'),
-              title: Text("Pantai"),
+              title: const Text("Pantai"),
               onTap: () {
                 _onTipeSelected('Pantai');
                 Navigator.pop(context);
@@ -61,7 +64,7 @@ void _showSortDialog() {
             ),
             ListTile(
               leading: getIconForTipe('Gunung'),
-              title: Text("Gunung"),
+              title: const Text("Gunung"),
               onTap: () {
                 _onTipeSelected('Gunung');
                 Navigator.pop(context);
@@ -69,7 +72,7 @@ void _showSortDialog() {
             ),
             ListTile(
               leading: getIconForTipe('Hutan'),
-              title: Text("Hutan"),
+              title: const Text("Hutan"),
               onTap: () {
                 _onTipeSelected('Hutan');
                 Navigator.pop(context);
@@ -77,7 +80,7 @@ void _showSortDialog() {
             ),
             ListTile(
               leading: getIconForTipe('Semua'),
-              title: Text("Semua"),
+              title: const Text("Semua"),
               onTap: () {
                 _onTipeSelected(null);
                 Navigator.pop(context);
@@ -94,13 +97,13 @@ void _showSortDialog() {
   Icon getIconForTipe(String tipe) {
     switch (tipe.toLowerCase()) {
       case 'pantai':
-        return Icon(Icons.beach_access, color: Colors.blue);
+        return const Icon(Icons.beach_access, color: Colors.blue);
       case 'gunung':
-        return Icon(Icons.terrain, color: Colors.brown);
+        return const Icon(Icons.terrain, color: Colors.brown);
       case 'hutan':
-        return Icon(Icons.forest, color: Colors.green);
+        return const Icon(Icons.forest, color: Colors.green);
       default:
-        return Icon(Icons.place, color: Colors.grey);
+        return const Icon(Icons.place, color: Colors.grey);
     }
   }
 
@@ -115,8 +118,8 @@ void _showSortDialog() {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wisata Banyuwangi'),
-        actions: [],
+        title: const Text('Wisata Banyuwangi'),
+        actions: const [],
       ),
       body: Column(
         children: [
@@ -132,12 +135,12 @@ void _showSortDialog() {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: const Icon(Icons.search),
                     ),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.sort),
+                  icon: const Icon(Icons.sort),
                   onPressed: _showSortDialog,
                 ),
               ],
@@ -146,10 +149,10 @@ void _showSortDialog() {
           Expanded(
             child: Obx(() {
               if (controller.daftarWisata.isEmpty) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               } else {
                 return GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
@@ -171,7 +174,7 @@ void _showSortDialog() {
                           children: [
                             Expanded(
                               child: ClipRRect(
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(20),
                                   topRight: Radius.circular(20),
                                 ),
@@ -191,7 +194,7 @@ void _showSortDialog() {
                                   Expanded(
                                     child: Text(
                                       wisata.nama,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),

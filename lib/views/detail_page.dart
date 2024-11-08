@@ -4,7 +4,7 @@ import 'package:bwispot/models/wisata_model.dart';
 class DetailPage extends StatelessWidget {
   final Wisata wisata;
 
-  DetailPage({required this.wisata});
+  const DetailPage({super.key, required this.wisata});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(wisata.nama),
         leading: IconButton(
-          icon: CircleAvatar(
+          icon: const CircleAvatar(
             radius: 20, // Ukuran lingkaran
             backgroundColor: Colors.blue, // Warna latar belakang lingkaran
             child: Icon(
@@ -40,16 +40,16 @@ class DetailPage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 wisata.nama,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Kotak transparan
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey[400]!, width: 1),
                   borderRadius: BorderRadius.circular(8),
@@ -61,12 +61,12 @@ class DetailPage extends StatelessWidget {
                     // Bagian lokasi
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_on,
                           color: Colors.redAccent,
                           size: 20,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           wisata.lokasi,
                           style: TextStyle(
@@ -76,17 +76,17 @@ class DetailPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
 
                     // Bagian rating
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.star,
                           color: Colors.amber,
                           size: 20,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           'Rating: ${wisata.rating}',
                           style: TextStyle(
@@ -99,14 +99,14 @@ class DetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   wisata.deskripsi,
                   textAlign: TextAlign.justify,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     height: 1.5,
                     color: Colors.black87,
