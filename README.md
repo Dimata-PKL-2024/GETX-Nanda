@@ -1,16 +1,17 @@
 # BWI Spot
 
-Aplikasi Pencatatan tempat wisata alam yang ada pada kabupaten banyuwangi
+BWI Spot adalah aplikasi pencatatan tempat wisata alam yang ada di Kabupaten Banyuwangi. Aplikasi ini bertujuan untuk memudahkan pengguna dalam mencari dan mendapatkan informasi mengenai tempat-tempat wisata alam di Banyuwangi, Jawa Timur.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Prasyarat
+Sebelum memulai, pastikan sudah menginstal perangkat lunak berikut:
 
-A few resources to get you started if this is your first Flutter project:
+Dart (Bahasa Pemrograman yang digunakan)
+Flutter (Framework yang digunakan)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Instalasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone Repository pada IDE atau Text editor yang digunakan dengan alamat dibawah ini:
+git clone https://github.com/username/BWI-Spot.git
+
