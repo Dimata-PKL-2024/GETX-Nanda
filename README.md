@@ -1,6 +1,6 @@
-# bwispot
+# BWI Spot
 
-A new Flutter project.
+Aplikasi Pencatatan tempat wisata alam yang ada pada kabupaten banyuwangi
 
 ## Getting Started
 
