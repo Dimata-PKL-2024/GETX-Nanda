@@ -2,9 +2,8 @@
 
 BWI Spot adalah aplikasi pencatatan tempat wisata alam yang ada di Kabupaten Banyuwangi. Aplikasi ini bertujuan untuk memudahkan pengguna dalam mencari dan mendapatkan informasi mengenai tempat-tempat wisata alam di Banyuwangi, Jawa Timur.
 
-## Getting Started
+## Catanan
 
-Prasyarat
 Sebelum memulai, pastikan sudah menginstal perangkat lunak berikut:
 
 Dart (Bahasa Pemrograman yang digunakan)
