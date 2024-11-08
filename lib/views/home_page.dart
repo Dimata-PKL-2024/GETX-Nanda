@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bwispot/controllers/wisata_controller.dart';
 import 'package:bwispot/views/detail_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,54 +46,61 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-void _showSortDialog() {
-  showDialog(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: const Text("Pilih Tipe Wisata"),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: getIconForTipe('Pantai'),
-              title: const Text("Pantai"),
-              onTap: () {
-                _onTipeSelected('Pantai');
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: getIconForTipe('Gunung'),
-              title: const Text("Gunung"),
-              onTap: () {
-                _onTipeSelected('Gunung');
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: getIconForTipe('Hutan'),
-              title: const Text("Hutan"),
-              onTap: () {
-                _onTipeSelected('Hutan');
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: getIconForTipe('Semua'),
-              title: const Text("Semua"),
-              onTap: () {
-                _onTipeSelected(null);
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
-
+  void _showSortDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Pilih Tipe Wisata"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: getIconForTipe('Pantai'),
+                title: const Text("Pantai"),
+                onTap: () {
+                  _onTipeSelected('Pantai');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: getIconForTipe('Gunung'),
+                title: const Text("Gunung"),
+                onTap: () {
+                  _onTipeSelected('Gunung');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: getIconForTipe('Hutan'),
+                title: const Text("Hutan"),
+                onTap: () {
+                  _onTipeSelected('Hutan');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: getIconForTipe('Air Terjun'),
+                title: const Text("Air Terjun"),
+                onTap: () {
+                  _onTipeSelected('Air Terjun');
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: getIconForTipe('Semua'),
+                title: const Text("Semua"),
+                onTap: () {
+                  _onTipeSelected(null);
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   Icon getIconForTipe(String tipe) {
     switch (tipe.toLowerCase()) {
@@ -102,8 +110,19 @@ void _showSortDialog() {
         return const Icon(Icons.terrain, color: Colors.brown);
       case 'hutan':
         return const Icon(Icons.forest, color: Colors.green);
+      case 'air terjun':
+        return const Icon(Icons.water_drop, color: Colors.blueAccent);
       default:
         return const Icon(Icons.place, color: Colors.grey);
+    }
+  }
+
+  Future<void> _launchContact() async {
+    final Uri contactUrl = Uri.parse("https://wa.me/628123456789"); // Masukkan nomor WhatsApp atau URL kontak di sini
+    if (await canLaunchUrl(contactUrl)) {
+      await launchUrl(contactUrl);
+    } else {
+      throw "Tidak dapat membuka kontak";
     }
   }
 
@@ -214,6 +233,11 @@ void _showSortDialog() {
             }),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _launchContact,
+        backgroundColor: Colors.blueAccent,
+        child: const Icon(Icons.contact_phone),
       ),
     );
   }

@@ -8,26 +8,30 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Mendapatkan ukuran lebar layar
+    double screenWidth = MediaQuery.of(context).size.width;
+    double padding = screenWidth * 0.05; 
+
     return Scaffold(
       appBar: AppBar(
         title: Text(wisata.nama),
         leading: IconButton(
           icon: const CircleAvatar(
-            radius: 20, // Ukuran lingkaran
-            backgroundColor: Colors.blue, // Warna latar belakang lingkaran
+            radius: 20,
+            backgroundColor: Colors.blue,
             child: Icon(
-              Icons.arrow_back, // Ikon back
-              color: Colors.white, // Warna ikon
+              Icons.arrow_back,
+              color: Colors.white,
             ),
           ),
           onPressed: () {
-            Navigator.pop(context); // Navigasi kembali ke halaman sebelumnya
+            Navigator.pop(context);
           },
         ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(padding), // Padding dinamis
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,14 +40,17 @@ class DetailPage extends StatelessWidget {
                 child: Image.asset(
                   wisata.gambar,
                   width: double.infinity,
-                  height: 250,
+                  height: screenWidth * 0.5, // Tinggi gambar responsif
                   fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: 10),
               Text(
                 wisata.nama,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: screenWidth * 0.06, // Font responsif
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 10),
 
@@ -67,11 +74,13 @@ class DetailPage extends StatelessWidget {
                           size: 20,
                         ),
                         const SizedBox(width: 5),
-                        Text(
-                          wisata.lokasi,
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.grey[600],
+                        Expanded(
+                          child: Text(
+                            wisata.lokasi,
+                            style: TextStyle(
+                              fontSize: screenWidth * 0.045, // Font responsif
+                              color: Colors.grey[600],
+                            ),
                           ),
                         ),
                       ],
@@ -87,11 +96,13 @@ class DetailPage extends StatelessWidget {
                           size: 20,
                         ),
                         const SizedBox(width: 5),
-                        Text(
-                          'Rating: ${wisata.rating}',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.grey[700],
+                        Expanded(
+                          child: Text(
+                            'Rating: ${wisata.rating}',
+                            style: TextStyle(
+                              fontSize: screenWidth * 0.045,
+                              color: Colors.grey[700],
+                            ),
                           ),
                         ),
                       ],
@@ -106,8 +117,8 @@ class DetailPage extends StatelessWidget {
                 child: Text(
                   wisata.deskripsi,
                   textAlign: TextAlign.justify,
-                  style: const TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(
+                    fontSize: screenWidth * 0.045, // Font responsif
                     height: 1.5,
                     color: Colors.black87,
                   ),

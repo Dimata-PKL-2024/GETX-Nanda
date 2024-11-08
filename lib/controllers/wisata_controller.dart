@@ -21,7 +21,7 @@ class WisataController extends GetxController {
         gambar: 'assets/images/kawahijen.jpg',
         lokasi: 'Licin, Banyuwangi, Jawa Timur',
         tipe: 'Gunung',
-        rating: 4.5,
+        rating: 4.9,
       ),
       Wisata(
         nama: 'Pulau Merah',
@@ -48,7 +48,7 @@ class WisataController extends GetxController {
         gambar: 'assets/images/baluran.jpg',
         lokasi: 'Banyuputih, Banyuwangi, Jawa Timur',
         tipe: 'Hutan',
-        rating: 4.6, // Tambahkan rating
+        rating: 4.6,
       ),
       Wisata(
         nama: 'Alas Purwo',
@@ -58,6 +58,42 @@ class WisataController extends GetxController {
         lokasi: 'Tegaldlimo, Banyuwangi, Jawa Timur',
         tipe: 'Hutan',
         rating: 4.8,
+      ),
+      Wisata(
+        nama: 'Pantai Teluk Hijau',
+        deskripsi:
+            'Teluk Hijau adalah pantai eksotis dengan pasir putih dan air laut berwarna hijau zamrud. Untuk mencapai pantai ini, pengunjung harus trekking atau naik perahu dari Pantai Rajegwesi. Tempat ini sangat cocok bagi mereka yang mencari ketenangan dan keindahan alam yang alami.',
+        gambar: 'assets/images/telukijo.jpg',
+        lokasi: 'Pesanggaran, Banyuwangi, Jawa Timur',
+        tipe: 'Pantai',
+        rating: 4.7,
+      ),
+      Wisata(
+        nama: 'Air Terjun Jagir',
+        deskripsi:
+            'Air Terjun Jagir dikenal sebagai "air terjun kembar" karena memiliki dua aliran yang berdampingan. Airnya yang jernih dan suasananya yang sejuk membuat tempat ini populer di kalangan wisatawan lokal dan internasional. Air Terjun Jagir adalah tempat yang ideal untuk bersantai dan menikmati suasana alam yang asri.',
+        gambar: 'assets/images/terjunjagir.jpg',
+        lokasi: 'Glagah, Banyuwangi, Jawa Timur',
+        tipe: 'Air Terjun',
+        rating: 4.8,
+      ),
+      Wisata(
+        nama: 'Pantai wedi ireng',
+        deskripsi:
+            'Pantai Wedi Ireng adalah pantai yang masih alami dan belum terlalu ramai dikunjungi. Pantai ini memiliki pasir putih dan air laut yang bersih. Pengunjung dapat melakukan snorkeling atau sekadar menikmati keindahan alam yang damai. Untuk mencapai pantai ini, pengunjung dapat trekking atau naik perahu dari Pantai Pulau Merah.',
+        gambar: 'assets/images/wediireng.jpg',
+        lokasi: 'Pesanggaran, Banyuwangi, Jawa Timur',
+        tipe: 'Pantai',
+        rating: 4.6,
+      ),
+      Wisata(
+        nama: 'Pantai Boom',
+        deskripsi:
+            'Pantai Boom adalah pantai yang mudah diakses karena berada di pusat kota Banyuwangi. Pantai ini memiliki dermaga unik yang menjorok ke laut dan sering menjadi lokasi acara budaya seperti tari Gandrung. Pemandangan gunung di kejauhan dan dermaga yang unik menjadikan Pantai Boom populer sebagai tempat untuk menikmati matahari terbit.',
+        gambar: 'assets/images/pantaiboom.jpg',
+        lokasi: 'Kota Banyuwangi, Banyuwangi, Jawa Timur',
+        tipe: 'Pantai',
+        rating: 4.5,
       ),
     ]);
   }
