@@ -12,5 +12,6 @@ Flutter (Framework yang digunakan)
 ## Instalasi
 
 Clone Repository pada IDE atau Text editor yang digunakan dengan mengetikan prompt beserta alamat dibawah ini:
+```
 git clone https://github.com/username/BWI-Spot.git
-
+```
