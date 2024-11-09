@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bwispot/controllers/wisata_controller.dart';
-import 'package:bwispot/views/detail_page.dart';
+import 'package:bwispot/views/widgets/wisata_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _launchContact() async {
-    final Uri contactUrl = Uri.parse("https://wa.me/628123456789"); // Masukkan nomor WhatsApp atau URL kontak di sini
+    final Uri contactUrl = Uri.parse("https://wa.me/628123456789"); // Nomer untuk menghubungi agensi travel (masih dummy)
     if (await canLaunchUrl(contactUrl)) {
       await launchUrl(contactUrl);
     } else {
@@ -180,53 +180,7 @@ class _HomePageState extends State<HomePage> {
                   itemCount: filteredWisata.length,
                   itemBuilder: (context, index) {
                     var wisata = filteredWisata[index];
-                    return GestureDetector(
-                      onTap: () {
-                        Get.to(() => DetailPage(wisata: wisata));
-                      },
-                      child: Card(
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Column(
-                          children: [
-                            Expanded(
-                              child: ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  '${wisata.gambar}',
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      wisata.nama,
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
+                    return WisataCard(wisata: wisata);
                   },
                 );
               }
@@ -236,7 +190,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _launchContact,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 121, 221, 129),
         child: const Icon(Icons.contact_phone),
       ),
     );

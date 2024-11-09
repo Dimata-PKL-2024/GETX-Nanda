@@ -8,7 +8,7 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Mendapatkan ukuran lebar layar
+    // Untuk ukuran lebar layar
     double screenWidth = MediaQuery.of(context).size.width;
     double padding = screenWidth * 0.05; 
 
@@ -31,7 +31,7 @@ class DetailPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(padding), // Padding dinamis
+          padding: EdgeInsets.all(padding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,7 +40,7 @@ class DetailPage extends StatelessWidget {
                 child: Image.asset(
                   wisata.gambar,
                   width: double.infinity,
-                  height: screenWidth * 0.5, // Tinggi gambar responsif
+                  height: screenWidth * 0.5,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -48,7 +48,7 @@ class DetailPage extends StatelessWidget {
               Text(
                 wisata.nama,
                 style: TextStyle(
-                  fontSize: screenWidth * 0.06, // Font responsif
+                  fontSize: screenWidth * 0.06,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -78,7 +78,7 @@ class DetailPage extends StatelessWidget {
                           child: Text(
                             wisata.lokasi,
                             style: TextStyle(
-                              fontSize: screenWidth * 0.045, // Font responsif
+                              fontSize: screenWidth * 0.045,
                               color: Colors.grey[600],
                             ),
                           ),
@@ -118,7 +118,7 @@ class DetailPage extends StatelessWidget {
                   wisata.deskripsi,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
-                    fontSize: screenWidth * 0.045, // Font responsif
+                    fontSize: screenWidth * 0.045,
                     height: 1.5,
                     color: Colors.black87,
                   ),
